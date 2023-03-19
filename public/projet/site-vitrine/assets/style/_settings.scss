@@ -1,0 +1,124 @@
+@font-face {
+	font-family: "Poppins";
+	src: url(../font/Poppins/Poppins-Medium.ttf);
+}
+
+$font1: Poppins, serif;
+// dark mode
+$blackd1: rgb(24, 24, 24);
+$blackd2: rgb(33, 33, 33);
+$white:		#eeeeee;
+$grey:		#bcbcbc;
+// two
+$white1:	#ffffff;
+$color1:	#f6931e;
+$color2:	#f6951e87;
+// White mode
+$grey-l1:		#7c7b7b;
+$white-l1:	whitesmoke;
+
+@mixin title {
+	text-transform: uppercase;
+	color: $white;
+}
+@mixin title2 {
+	color: $color1;
+	font-family: $font1;
+	font-weight: 230;
+}
+@mixin childCenter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@mixin alignChildren($space) {
+	display: flex;
+	align-items: center;
+	justify-content: $space;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	scroll-behavior: smooth;
+}
+li {
+	list-style: none;
+}
+a, a:visited {
+	color: $white;
+	text-decoration: none;
+}
+body {
+	background: $blackd1;
+	text-align: center;
+	font-family: $font1;
+}
+
+.light {
+	background: $white-l1 !important;
+	h1, h2, h3, h4, h5 {
+		color: $blackd1 !important;
+		&::before {
+			border-color: $blackd1 !important;
+		}
+	}
+	p, li,
+	a, a:visited,
+	.contact,
+	.input-value {
+		color: $grey-l1 !important;
+	}
+	nav, .favicons {
+		a, a:visited {
+			&:hover {
+				color: $blackd1 !important;
+			}
+		}
+	}
+	.flex, 
+	.grade-box,
+	.box-container {
+		background-color: $white1 !important;
+		border-radius: 15px;
+		box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.429);
+	}
+	.back-to-header a {
+		color: $blackd1 !important;
+		&:hover {
+			color: $color1 !important;
+		}
+	}
+	.md-switch-color {
+		color: $grey-l1 !important;
+
+		&:hover {
+			color: $blackd1 !important;
+		}
+	}
+	.social-media span {
+		border-color: transparent;
+		background-color: transparent;
+		
+		a:visited,
+		a {
+			color: $blackd1 !important;
+		}
+	}
+	.toggle-btn {
+		color: $grey-l1 !important;
+
+		&:hover .toggle {
+			color: $blackd1 !important;
+		}
+	}
+}
+.current-tab {
+	color: $white !important;
+	&:after {
+		width: 100% !important;
+		height: 2px !important;
+	}
+}
