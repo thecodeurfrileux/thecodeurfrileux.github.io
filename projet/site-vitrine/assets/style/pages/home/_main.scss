@@ -1,0 +1,148 @@
+main {
+	background-color: $blackd1;
+	padding: 70px 40px;
+	color: $grey;
+	text-align: left;
+	
+	.presentation {
+		max-width: 1300px;
+		margin: 0 auto;
+		padding-bottom: 36px;
+	}
+	.title-main-section {
+		@include title;
+		font-size: 2.2rem;
+		line-height: 1.1;
+		font-weight: 900;
+
+		@media screen and (max-width: 650px){
+			font-size: 1.7rem;
+		}
+
+		&::before {
+			content: "";
+			display: inline-block;
+			position: relative;
+			top: calc(-.1 * 1em);
+			vertical-align: middle;
+			height: calc(4px + 0.7em);
+			margin-right: calc(5px + 0.2em);
+			border-left: calc(5px + 0.1em) solid #fff;
+		}
+	}
+	.main-container {
+		display: flex;
+		gap: 15px;
+		width: 100%;
+		
+		.flex {
+			background-color: $blackd2;
+			width: 50%;
+			padding: 70px 40px;
+
+			p {
+				font-size: 16px;
+				font-weight: 400;
+				line-height: 1.5;
+			}
+		}
+		@media screen and (max-width: 650px){
+			display: grid;
+			.flex {
+				width: 100%;
+				padding: 40px 30px;
+			}
+		}
+	}
+
+	// 2nd part
+	.h4-grade {
+		max-width: 1300px;
+		margin: 0 auto;
+		@include title;
+		font-size: 1.4rem;
+		line-height: 1.1;
+		font-weight: 900;
+		padding-bottom: 36px;
+
+		&::before {
+			content: "";
+			display: inline-block;
+			position: relative;
+			top: calc(-.1 * 1em);
+			vertical-align: middle;
+			height: calc(4px + 0.7em);
+			margin-right: calc(5px + 0.2em);
+			border-left: calc(5px + 0.1em) solid #fff;
+		}
+	}
+	.grade-boxs {
+		max-width: 1300px;
+		margin: 0 auto;
+		display: flex;
+		width: 100%;
+
+		@media screen and (max-width: 1100px){
+			display: block;
+		}
+		.grade-box {
+			background-color: $blackd2;
+			padding: 20px;
+			display: grid;
+			grid-template-rows: 13fr 13fr 61fr 13fr;
+			height: 470px;
+			width: 100%;
+			margin-left: 80px;
+			position: relative;
+			@media screen and (max-width: 1100px){
+				margin-left: 0;
+				margin-top: 10px;
+				&:first-child {
+					margin-top: 0;
+				}
+			}
+
+			&:first-child {
+				margin-left: 0;
+			}
+			&::before {
+				content: "";
+				position: absolute;
+				width: 1px;
+				height: 100%;
+				background-color: rgb(57, 56, 56);
+				left: -40px;
+
+				@media screen and (max-width: 1100px){
+					display: none;
+				}
+			}
+
+			h3 {
+				@include title;
+				font-size: 1.5rem;
+			}
+			p {
+				margin: 30px 0;
+				height: 194px;
+				overflow: hidden;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp: 8;
+			}
+			a {
+				height: 45px;
+				width: 64px;
+				@include childCenter;
+				background-color: $color1;
+				color: $blackd1;
+				font-weight: 900;
+				transition: 0.2s;
+
+				&:hover {
+					background: $white;
+				}
+			}
+		}
+	}
+}

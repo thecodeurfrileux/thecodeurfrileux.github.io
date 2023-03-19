@@ -1,0 +1,9 @@
+.comment-container {
+	padding: 70px 40px;
+	max-width: 1300px;
+	text-align: left;
+	color: $grey;
+	@media screen and (max-width:650px) {
+		padding: 35px 20px;
+	}
+}
